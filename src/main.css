@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+
+/* Reset some default styles to ensure consistency across browsers */
+html,
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Inter", sans-serif !important;
+}
+
+/* Apply a box-sizing border-box model to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set a baseline font size and line height for better readability */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Remove default list styling */
+ul {
+  list-style: none;
+}
+
+/* Apply some basic styling to links */
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.main-screen-layout {
+  background-color: #ccc;
+  width: 100%;
+  min-height: 90vh;
+
+  & .mob-app-container {
+    width: 100%;
+    max-width: 767.98px;
+    background-color: #fff;
+    min-height: 90vh;
+    margin: 0 auto;
+  }
+}
+
+/* splash screen css  */
+.splash-screen-container {
+  min-height: 90vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+
+  & img {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  & .splash-screen-wrapper {
+    background-color: transparent;
+    width: 100%;
+
+    & .splash-screen-inner-card {
+      padding: 0 15px 70px 15px;
+
+      & h2 {
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+      & p {
+        font-size: 14px;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+      & button {
+        display: block;
+        width: 100%;
+        padding: 14px 20px;
+        outline: none;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #13b8ff;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+/* login screen css  */
+.login-screen-container {
+  min-height: 90vh;
+  width: 100%;
+  background: linear-gradient(190deg, #13b8ff 3%, #0077b6 97%);
+
+  & .login-screen-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+
+    & .login-form-checkbox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      & p {
+        color: #adadad;
+        font-size: 14px;
+      }
+    }
+  }
+  & .login-screen-header {
+    padding: 30px 15px;
+    position: relative;
+
+    & img {
+      width: 30px;
+      margin-bottom: 10px;
+    }
+
+    & h2 {
+      font-size: 30px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    & p {
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+    }
+  }
+  & .login-screen-form-wrapper {
+    background-color: #fff;
+    padding: 30px 15px;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    flex-grow: 1;
+
+    & .drawer-line {
+      width: 100px;
+      height: 5px;
+      border-radius: 10px;
+      background-color: #e6e6e6;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    & .login-form-box {
+      width: 100%;
+      margin-bottom: 20px;
+
+      & input {
+        width: 100%;
+        padding: 15px;
+        outline: none;
+        border-radius: 8px;
+        border: 0.9px solid rgba(30, 31, 33, 0.3);
+        background: #fff;
+      }
+    }
+
+    & button {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      outline: none;
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+      background-color: #13b8ff;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+}
+
+/* home css */
+
+.home-container {
+  padding: 15px;
+  & > img {
+    margin-bottom: -5px;
+    padding: 0 5px;
+  }
+  & .home-header {
+    & h2 {
+      font-size: 30px;
+      color: #101317;
+      line-height: 0.9;
+    }
+    & p {
+      font-size: 18px;
+      font-weight: 400;
+      color: #acafb5;
+    }
+  }
+
+  & .home-inner-status-card {
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(101, 154, 157, 0.22);
+    background: linear-gradient(180deg, rgba(97, 196, 218, 0.07) 0.25%, rgba(241, 249, 242, 0.1) 7.98%), #fff;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+    & .home-clock p {
+      text-align: center;
+      width: 100px;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  }
+
+  & .home-upcoming-batches {
+    margin-top: 20px;
+    & > h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+    & .card {
+      border-radius: 12px;
+      margin-bottom: 15px;
+      padding: 15px;
+      border: 1px solid rgba(101, 154, 157, 0.22);
+      background: linear-gradient(180deg, rgba(97, 196, 218, 0.07) 0.25%, rgba(241, 249, 242, 0.1) 7.98%), #fff;
+      box-shadow: 0px 4px 18px 2px rgba(116, 121, 157, 0.1);
+      & .card-top {
+        display: grid;
+        grid-template-columns: 30% auto;
+        gap: 15px;
+        margin-bottom: 15px;
+        & .card-description {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          & > h3 {
+            font-size: 15px;
+          }
+          & > p {
+            font-size: 13px;
+          }
+        }
+      }
+
+      & button {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        outline: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+        background-color: #13b8ff;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+/* clock css */
+.analog-clock {
+  height: 100px;
+  width: 100px;
+  border: 12px solid #E7F9FC;
+  background-color: #0077b6;
+  border-radius: 50%;
+  position: relative;
+}
+.hour-hand {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  height: 8px;
+  transform: rotate(90deg);
+  transform-origin: 70%;
+  border-radius: 5px 0 0 5px;
+  background: #97d5f7;
+}
+.minute-hand {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  height: 6px;
+  transform: rotate(90deg);
+  transform-origin: 100%;
+  border-radius: 5px 0 0 5px;
+  background: #97d5f7;
+}
+.second-hand {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  transform: rotate(90deg);
+  transform-origin: 100%;
+  background-color: rgb(250, 92, 92);
+  border-radius: 5px 0 0 5px;
+  height: 2px;
+}
+
+.clock-face {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #97d5f7;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border: 2px solid rgb(250, 92, 92);
+}
