@@ -31,17 +31,14 @@ const AnalogClock = () => {
   const secondAngle = (seconds * 360) / 60;
 
   return (
-    <div>
-      <div className="analog-clock">
-        <div className="circle-dot"></div>
-        <div className="clock-face">
-          <div className="hour-hand" style={{ transform: `rotate(${hourAngle}deg)` }} />
-          <div className="minute-hand" style={{ transform: `rotate(${minuteAngle}deg)` }} />
-          <div className="second-hand" style={{ transform: `rotate(${secondAngle}deg)` }} />
-        </div>
+    <>
+      <div className="clock">
+        <div className="hour_hand" style={{ transform: `rotateZ(${hourAngle}deg)` }} />
+        <div className="min_hand" style={{ transform: `rotateZ(${minuteAngle}deg)` }} />
+        <div className="sec_hand" style={{ transform: `rotateZ(${secondAngle}deg)` }} />
       </div>
       <p>{timeString}</p>
-    </div>
+    </>
   );
 };
 

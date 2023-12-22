@@ -59,12 +59,7 @@ function DrawerAppBar(props) {
 
   return (
     <Box>
-      <AppBar
-        component="nav"
-        position="static"
-        color="transparent"
-        sx={{ boxShadow: "0px 4px 20px 0px rgba(47, 143, 232, 0.07)" }}
-      >
+      <AppBar component="nav" sx={{ boxShadow: "0px 4px 20px 0px rgba(47, 143, 232, 0.07)", background: "#fff" }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <IconButton onClick={handleDrawerToggle}>
             <img src={BarsIcon} />
@@ -77,7 +72,7 @@ function DrawerAppBar(props) {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: "45px"}}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{

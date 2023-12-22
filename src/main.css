@@ -48,6 +48,7 @@ a {
   background-color: #ccc;
   width: 100%;
   min-height: 90vh;
+  position: relative;
 
   & .mob-app-container {
     width: 100%;
@@ -56,6 +57,13 @@ a {
     min-height: 90vh;
     margin: 0 auto;
   }
+}
+iframe .gm-style .place-card {
+  background-color: red !important;
+}
+.bottom-drawer .MuiDrawer-paper {
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
 }
 
 /* splash screen css  */
@@ -205,18 +213,19 @@ a {
 
 .home-container {
   padding: 15px;
+  margin-top: 60px;
   & > img {
     margin-bottom: -5px;
     padding: 0 5px;
   }
   & .home-header {
     & h2 {
-      font-size: 30px;
+      font-size: 25px;
       color: #101317;
       line-height: 0.9;
     }
     & p {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 400;
       color: #acafb5;
     }
@@ -242,8 +251,8 @@ a {
   & .home-upcoming-batches {
     margin-top: 20px;
     & > h3 {
-      font-size: 25px;
-      margin-bottom: 15px;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
     & .card {
       border-radius: 12px;
@@ -286,64 +295,117 @@ a {
     }
   }
 }
+.home-view-batch {
+  height: 70vh;
+  padding: 15px;
+  overflow: auto;
 
+  & .view-top-map {
+    display: grid;
+    grid-template-columns: auto 120px;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    & h3 {
+      font-size: 20px;
+      line-height: .98;
+      margin-bottom: 8px;
+    }
+    & p {
+      font-size: 12px;
+      color: #4f547b;
+    }
+  }
+  & > button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #13b8ff;
+    border: none;
+    border-radius: 8px;
+  }
+  & .btach-detail-list {
+    & ul li {
+      list-style: none;
+      padding: 15px 0;
+      border-bottom: 1.5px dashed #e8e8e8;
+
+      & h4 {
+        font-size: 16px;
+        color: #101317;
+        margin: 0;
+      }
+      & p {
+        font-size: 12px;
+        margin-top: 3px;
+        color: #4f547b;
+      }
+    }
+  }
+}
 /* clock css */
-.analog-clock {
-  height: 100px;
+.clock {
   width: 100px;
-  border: 12px solid #E7F9FC;
-  background-color: #0077b6;
+  height: 100px;
   border-radius: 50%;
+  background-color: #04befc;
+  font-size: 8px;
   position: relative;
-}
-.hour-hand {
-  position: absolute;
-  top: 50%;
-  width: 50%;
-  height: 8px;
-  transform: rotate(90deg);
-  transform-origin: 70%;
-  border-radius: 5px 0 0 5px;
-  background: #97d5f7;
-}
-.minute-hand {
-  position: absolute;
-  top: 50%;
-  width: 50%;
-  height: 6px;
-  transform: rotate(90deg);
-  transform-origin: 100%;
-  border-radius: 5px 0 0 5px;
-  background: #97d5f7;
-}
-.second-hand {
-  position: absolute;
-  top: 50%;
-  width: 50%;
-  transform: rotate(90deg);
-  transform-origin: 100%;
-  background-color: rgb(250, 92, 92);
-  border-radius: 5px 0 0 5px;
-  height: 2px;
+  color: #444;
+  text-align: center;
+  border: 10px solid #e7f9fc;
 }
 
-.clock-face {
-  height: 60px;
-  width: 60px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.circle-dot {
+.clock::after {
+  background: #e7f9fc;
+  content: "";
   width: 10px;
   height: 10px;
-  background-color: #97d5f7;
   border-radius: 50%;
   position: absolute;
+  z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
-  border: 2px solid rgb(250, 92, 92);
+  border: 2px solid rgb(254, 93, 93);
+}
+
+.hour_hand {
+  position: absolute;
+  width: 6px;
+  height: 25px;
+  background: #a9effc;
+  top: 20%;
+  left: 36.5px;
+  transform-origin: bottom;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.min_hand {
+  position: absolute;
+  width: 4px;
+  height: 30px;
+  background: #e7f9fc;
+  top: 12.5%;
+  left: 39px;
+  z-index: 1;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+.sec_hand {
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background: rgb(254, 93, 93);
+  top: 12.5%;
+  left: 39px;
+  transform-origin: bottom;
+  border-radius: 10px;
+  z-index: 1;
 }
